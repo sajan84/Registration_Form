@@ -15,6 +15,7 @@ public class Rform extends Application {
 
         GridPane pane=new GridPane();
         pane.setAlignment(Pos.CENTER);
+        pane.setStyle("-fx-background-color:rgb(153, 204, 255)");
         pane.setHgap(7);
         pane.setVgap(7);
         //label for first name
@@ -107,7 +108,8 @@ public class Rform extends Application {
 
 //       Second Scene for new window after To new Page
         GridPane pane2=new GridPane();
-        Scene sc1=new Scene(pane2,500,500);
+        Scene sc1=new Scene(pane2,1000,300);
+
         Label WelcomePage=new Label();
         WelcomePage.setAlignment(Pos.CENTER);
 
@@ -127,7 +129,7 @@ public class Rform extends Application {
 
             }
             //validation for Middle name
-            Boolean b=p.matcher(mname.getText()).matches();
+            Boolean b=p.matcher(mnameText.getText()).matches();
              b=p.matcher(mnameText.getText()).matches();
             if (!b){
                 Alert alert=new Alert(Alert.AlertType.WARNING);
@@ -137,7 +139,7 @@ public class Rform extends Application {
                 alert.showAndWait();
             }
             //validation for last name
-            Boolean c=p.matcher(lname.getText()).matches();
+            Boolean c=p.matcher(lnameText.getText()).matches();
             if (!c){
                 Alert alert=new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Name Warning");
@@ -222,8 +224,8 @@ public class Rform extends Application {
                 String name=fnameText.getText()+" "+lnameText.getText();
                 WelcomePage.setText("Welcome "+ name);
                 pane2.setAlignment(Pos.CENTER);
-                pane2.setStyle("-fx-font:40px CENTER");
                 pane2.add(WelcomePage,1,1);
+                pane2.setStyle("-fx-background-color:rgb(153, 204, 255);-fx-font:40px CENTER");
             }
         });
         //Event handling on Cancel Button
@@ -244,7 +246,7 @@ public class Rform extends Application {
             Gujarati.setSelected(false);
         });
 
-        Scene sc=new Scene(pane,1000,1000);
+        Scene sc=new Scene(pane,400,500);
         stage.setTitle("Registartion Form");
         stage.setScene(sc);
         stage.show();
